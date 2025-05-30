@@ -43,7 +43,7 @@ app/data/RAW_recipes.csv
 # via volume mounts from persistent_assets, then you might ignore it.
 # For this project, you likely *are* committing your initial .parquet and .faiss to app/assets.
 # So, we will NOT ignore app/assets by default.
-app/assets/
+
 # Persistent assets (runtime generated, model caches, etc.)
 # These are definitely NOT for the Git repository.
 persistent_assets/
