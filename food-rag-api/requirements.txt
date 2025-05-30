@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+pandas
+numpy
+sentence-transformers
+faiss-cpu
+ctransformers
+huggingface_hub
+python-dotenv
+tqdm
+pyarrow  # <--- ADD THIS LINE

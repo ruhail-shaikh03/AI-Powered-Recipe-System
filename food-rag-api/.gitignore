@@ -1,0 +1,84 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.env
+.venv/
+env/
+venv/
+ENV/
+VENV/
+pip-freeze.txt
+pipenv.lock
+
+# IDE and OS specific
+.vscode/
+.idea/
+*.project
+*.tmproj
+.DS_Store
+Thumbs.db
+
+# Docker - ignore local docker-specific files if any, beyond the Dockerfile itself
+# .dockerignore # Often .dockerignore is committed, but Dockerfile itself shouldn't be ignored
+# Dockerfile # Usually committed
+
+# Local data and assets NOT meant for the repository
+# If RAW_recipes.csv is very large, you might consider not committing it
+# and instructing users to download it separately.
+# For now, let's assume it's manageable or you want it versioned.
+app/data/RAW_recipes.csv 
+
+# Generated assets by the application (parquet, faiss index)
+# These are often large and can be regenerated.
+# They are typically placed in app/assets/ or persistent_assets/ via volume mounts.
+# If you are committing pre-generated versions to app/assets for a base state,
+# then don't ignore app/assets. If app/assets is purely for runtime generated files
+# via volume mounts from persistent_assets, then you might ignore it.
+# For this project, you likely *are* committing your initial .parquet and .faiss to app/assets.
+# So, we will NOT ignore app/assets by default.
+app/assets/
+# Persistent assets (runtime generated, model caches, etc.)
+# These are definitely NOT for the Git repository.
+persistent_assets/
+
+# Local model cache directories if they ever get created outside persistent_assets
+# (though our volume mounts aim to put them in persistent_assets)
+/root/.cache/huggingface/ 
+/root/.cache/torch/ 
+
+# Log files
+*.log
+logs/
+
+# Coverage data
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Secrets and sensitive configuration
+credentials.*
+*.secret
+*.pem
+*.key
+*.env.*local
+# If you have a local .env file for Docker Compose overrides
+docker-compose.override.yml
+*.sqlite3
+*.db
+
+# Temporary files
+*.tmp
+*.swp
+*~

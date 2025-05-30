@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+VENV/
+pip-freeze.txt
+pipenv.lock
+
+# IDE and OS specific
+.vscode/
+.idea/
+*.project
+*.tmproj
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Notebooks and Markdown (if not needed in the image)
+*.ipynb
+*.md
+
+# Local Docker build context files (if any)
+.dockerignore
+Dockerfile # Typically ignored so it's not copied into itself
+
+# Sensitive files
+*.pem
+*.key
+*.secret
+credentials.*
+*.env.*local
+
+# Cache directories that might be large and are not needed in the image
+# The application will use /root/.cache inside the container, which can be volume-mounted
+.cache/
+# If you create the persistent_assets directory at the root, ignore it from build context
+persistent_assets/
